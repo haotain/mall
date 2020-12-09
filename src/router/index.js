@@ -1,15 +1,32 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
+
+const Home = () => import('views/home/Home')
+const Catagory = () => import('views/catagory/Catagory')
+const Cart = () => import('views/cart/Cart')
+const Profile = () => import('views/profile/Profile')
 
 const routes = [
-
+  {
+    path: '/home',
+    component : Home
+  },
+  {
+    path: '/catagory',
+    component : Catagory
+  },
+  {
+    path: '/cart',
+    component : Cart
+  },
+  {
+    path: '/profile',
+    component : Profile
+  }
 ]
-
-const router = new VueRouter({
+export default new Router({
   routes
 })
 
-export default router
