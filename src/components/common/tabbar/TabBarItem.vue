@@ -36,7 +36,7 @@
    },
    methods: {
      itemClick () {
-       this.$router.push(this.path)
+       this.$router.replace(this.path)
      }
    }
 
