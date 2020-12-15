@@ -5,13 +5,7 @@
         购物街
       </template>
     </nav-bar>
-    <!-- <home-swiper :banners="banners"></home-swiper> -->
-    <div id="container">
-      <div id="list">
-        <img v-for="(item, key) in banners" :key="key" :src="[item.image]"/>
-      </div>
-
-    </div>
+    <home-swiper :banners="banners"></home-swiper>
   </div>
 </template>
 
@@ -59,20 +53,4 @@
     background-color: red;
     color: seashell;
   }
-  #container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 190px;
-  }
-   #list {
-    width: 100%;
-    height: 190px;
-    position: absolute;
-    display: flex;
-    /* left: -600px; */
-   }
-   #list img {
-     width: 100%;
-   }
 </style>
