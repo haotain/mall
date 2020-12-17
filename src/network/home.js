@@ -5,14 +5,3 @@ export function getHomeMultidata() {
   })
 }
 
-export function getHomeGoodsdata(cid, page) {
-  return localRequest({
-    url: "/shop/index/detailList",
-    data: {
-      cid,
-      page
-    },
-    // headers: {'X-Requested-With': 'XMLHttpRequest'},
-    method: 'post'
-  })
-}

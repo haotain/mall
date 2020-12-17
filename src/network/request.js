@@ -19,23 +19,3 @@ export function request(config) {
 
   return instance(config);
 }
-
-export function localRequest(config) {
-  const localInstance = axios.create({
-    baseURL: 'http://www.kincustom.cn',
-    timeout: 50000
-  })
-
-  localInstance.interceptors.request.use(config => {
-    return config
-  }, err => {
-    console.log(err);
-  })
-  localInstance.interceptors.response.use(res => {
-    return res.data
-  }, res => {
-    console.log(res)
-  })
-
-  return localInstance(config);
-}
