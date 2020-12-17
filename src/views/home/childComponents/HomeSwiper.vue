@@ -5,7 +5,7 @@
         <img :src="item.image" alt="">
       </a>
     </swiper-item>
-    
+
   </swiper>
 </template>
 

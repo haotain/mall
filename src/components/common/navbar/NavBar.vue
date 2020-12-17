@@ -25,7 +25,7 @@
  }
 </script>
 
-<style>
+<style scoped>
   .nav-bar {
     display: flex;
     flex-direction: row;
