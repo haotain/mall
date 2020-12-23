@@ -1,6 +1,6 @@
 <template>
- <div class="list-item">
-   <img :src="goodsItem.fid" />
+ <div class="list-item" @click="itemClick">
+   <img :src="goodsItem.fid"  @load="imgLoad">
    <div list-item-info>
      <p>{{goodsItem.title}}</p>
      <p>{{goodsItem.product_title}}</p>
@@ -31,6 +31,14 @@
    },
    components: {
 
+   },
+   methods: {
+      imgLoad() {
+       this.$bus.$emit('imageLoad')
+      },
+      itemClick() {
+        this.$router.push('/detail/' + this.goodsItem.goods_id)
+      }
    }
  }
 </script>

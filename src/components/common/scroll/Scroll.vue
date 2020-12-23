@@ -48,21 +48,30 @@
    },
    methods: {
     scrollInit() {
-        console.log('sroll');
-        this.scroll = new BScroll(this.$refs.wrapper, {
-          click: true,
-          probeType: this.probeType,
-          pullUpLoad: this.pullUpLoad
-        })
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        click: true,
+        probeType: this.probeType,
+        pullUpLoad: this.pullUpLoad
+      })
+
+      if (this.probeType ===2 || this.probeType === 3) {
         this.scroll.on('scroll', (position) => {
-          // console.log(position);
           this.$emit('scrollPosition', position)
         })
-        this.scroll.on('pullingUp', () => {
+      }
+
+      this.scroll.on('pullingUp', () => {
           this.$emit('getData')
-        })
+      })
+    },
+    refresh() {
+      this.scroll && this.scroll.refresh()
+    },
+    scrollTo(x = 0, y = 0, time = 500) {
+       this.scroll && this.scroll.scrollTo(x, y, time)
     }
    }
+
  }
 </script>
 
